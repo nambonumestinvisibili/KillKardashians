@@ -1,8 +1,10 @@
 package com.company;
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.FileNotFoundException;
+
+//Basic platformer game developed due to OOP course at IIUwr
+
 
 public class Main {
 
