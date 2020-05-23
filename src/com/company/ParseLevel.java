@@ -7,9 +7,21 @@ import java.util.Scanner;
 
 public class ParseLevel {
 
-    public static ArrayList<ArrayList<Integer>> parseLevel(String fileName) throws FileNotFoundException {
+    static ArrayList<String> levelPaths = new ArrayList<>();
 
-        File leveldata =  new File(fileName);
+    public static void getLevels(){
+        File folder = new File("resources\\levels\\");
+        File[] listOfFiles = folder.listFiles();
+
+        assert listOfFiles != null;
+        for (File file : listOfFiles){
+            levelPaths.add(file.getAbsolutePath());
+        }
+    }
+
+    public static ArrayList<ArrayList<Integer>> parseLevel(int level) throws FileNotFoundException {
+
+        File leveldata =  new File(levelPaths.get(level));
         Scanner scanner = new Scanner(leveldata);
 
         ArrayList<ArrayList<Integer>> splitList = new ArrayList<>();
@@ -20,6 +32,7 @@ public class ParseLevel {
             for (String s : temp){
                 aux.add(Integer.parseInt(s));
             }
+
             splitList.add(aux);
         }
 

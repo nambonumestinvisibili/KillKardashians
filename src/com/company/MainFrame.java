@@ -10,6 +10,8 @@ public class MainFrame extends JFrame {
 
     public MainFrame() throws FileNotFoundException {
 
+        ParseLevel.getLevels();
+
         setSize(1200,800);
         setTitle("Kill Kardashians");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

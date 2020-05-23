@@ -1,22 +1,15 @@
 package com.company;
 
+import javax.swing.*;
 import java.awt.*;
 
-public class Obstacles {
+public class Obstacle extends Sprites {
 
-    int x;
-    int y;
-    int width = 50;
-    int height = 50;
+    ImageIcon img = new ImageIcon("resources\\obstacleImages\\kim.jpg");
+    Image kimimg = img.getImage();
+    double xspeed = 1;
 
-    GamePanel panel;
-
-    double movement = 1;
-
-    Rectangle hitBox;
-
-
-    public Obstacles(int x, int y, int width, int height, GamePanel panel){
+    public Obstacle(int x, int y, int width, int height, GamePanel panel){
         this.x = x;
         this.y = y;
         this.height = height;
@@ -28,6 +21,7 @@ public class Obstacles {
     public void draw(Graphics2D gtd){
         gtd.setColor(Color.red);
         gtd.fillRect(x, y, width, height);
+        gtd.drawImage(kimimg, x, y, null);
 
     }
 
@@ -37,11 +31,11 @@ public class Obstacles {
         for (Wall wall : panel.walls){
             if (hitBox.intersects(wall.hitBox)){
 
-                hitBox.x += movement;
-                x += movement;
+                hitBox.x += xspeed;
+                x += xspeed;
             }
             if (!hitBox.intersects(wall.hitBox)){
-                movement = -movement;
+                xspeed = -xspeed;
             }
         }
         hitBox.y -= 3;

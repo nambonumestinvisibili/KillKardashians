@@ -7,18 +7,26 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.TimerTask;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class GamePanel extends JPanel implements ActionListener {
 
     Timer gameTimer;
+    int timeCounter = 0;
+
+    int level = 0;
 
     //Visible Objects
     Player player;
 
     ArrayList<Wall> walls = new ArrayList<>();
-    ArrayList<Obstacles> obstacles = new ArrayList<>();
+    ArrayList<Obstacle> obstacles = new ArrayList<>();
+    ArrayList<PlayerMissile> playerMissiles = new ArrayList<>();
+    ArrayList<ObstacleMissile> obstacleMissiles = new ArrayList<>();
+
+
+    int frameX = 1200;
 
 
 
@@ -26,7 +34,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
         //adding all visible objects
         player = new Player(400, 300, this);
-        makeObjects();
+        createAllGameObjects();
 
         //setting GameTimer
         gameTimer = new Timer();
@@ -35,12 +43,29 @@ public class GamePanel extends JPanel implements ActionListener {
             @Override
             public void run() {
 
+                //timeCounter is used as an interval for shooting missiles by Obstacles
+                if (timeCounter > 122) timeCounter = 0;
+                else timeCounter++;
+
+
                 //movement of objects
                 player.set();
-                for (Obstacles obstacle : obstacles) obstacle.set();
+                for (Obstacle obstacle : obstacles) obstacle.set();
+                for (Missile missile : playerMissiles) missile.set();
+                for(Missile missile : obstacleMissiles) missile.set();
+
+                //Checking if player missiles hit obstacles or whether they came to be out of the frame
+                checkMissilesAndObstacles();
+
+                //For all remaining obstacle shoot missiles if interval is ok
+                if ((timeCounter % 30 == 0))
+                    shootObstacleMissiles();
+
+                //getting to next level
+                handleNextLevel();
 
                 //checking if game should finish
-                if (player.health < 1) showGameOverMessage();
+                handleGameOver();
 
                 repaint();
             }
@@ -48,26 +73,10 @@ public class GamePanel extends JPanel implements ActionListener {
         }, 0, 17);
     }
 
-    public void paint(Graphics g){
 
-        super.paint(g);
-        Graphics2D gtd =(Graphics2D) g;
+    private void createAllGameObjects() throws FileNotFoundException {
 
-        //drawing all visible objects
-        player.draw(gtd);
-        for (Wall wall : walls) wall.draw(gtd);
-        for (Obstacles obstacle : obstacles) obstacle.draw(gtd);
-
-        //if (player.health < 1) showGameOverMessage();
-
-
-        //drawing all the other neccessary objects
-        gtd.drawString("Health:" + String.valueOf(player.health),80,30);
-    }
-
-    public void makeObjects() throws FileNotFoundException {
-
-        ArrayList<ArrayList<Integer>> leveldata = ParseLevel.parseLevel("resources\\level2.csv");
+        ArrayList<ArrayList<Integer>> leveldata = ParseLevel.parseLevel(level);
         int row = leveldata.size();
         int col = leveldata.get(0).size();
 
@@ -78,7 +87,7 @@ public class GamePanel extends JPanel implements ActionListener {
                 }
 
                 if (leveldata.get(i).get(j) == 2){
-                    obstacles.add(new Obstacles(j*50, i*50, 50, 50, this));
+                    obstacles.add(new Obstacle(j*50, i*50, 50, 50, this));
                 }
 
             }
@@ -86,6 +95,41 @@ public class GamePanel extends JPanel implements ActionListener {
 
     }
 
+
+    //Handling missile things to handle
+
+    private void checkMissilesAndObstacles(){
+        ArrayList<Integer> missilesToRemove = new ArrayList<>();
+        ArrayList<Integer> obstaclesToRemove = new ArrayList<>();
+
+        for (Missile missile : playerMissiles) {
+            if (missile.x > frameX || missile.x < 0){
+                missilesToRemove.add(playerMissiles.indexOf(missile));
+            }
+
+            for (Obstacle obstacle : obstacles){
+                if (missile.hitBox.intersects(obstacle.hitBox)){
+                    obstaclesToRemove.add(obstacles.indexOf(obstacle));
+                    missilesToRemove.add(playerMissiles.indexOf(missile));
+
+                }
+            }
+        }
+
+        for (int every : missilesToRemove) playerMissiles.remove(every);
+        for (int every : obstaclesToRemove) obstacles.remove(every);
+    }
+
+    private void shootObstacleMissiles(){
+        for (Obstacle obstacle: obstacles){
+            if (player.y >= obstacle.y && player.y < obstacle.y + obstacle.height){
+                obstacleMissiles.add(new ObstacleMissile(obstacle.x, obstacle.y, 20,20, this));
+            }
+        }
+    }
+
+
+    //Handling game logistics
     private void showGameOverMessage(){
 
         //gtd.setFont(new Font("TimesRoman", Font.PLAIN, 800));
@@ -97,14 +141,86 @@ public class GamePanel extends JPanel implements ActionListener {
 
     }
 
+    private void nextLevelCleaning(){
+        walls.clear();
+        playerMissiles.clear();
+        obstacleMissiles.clear();
+        obstacles.clear();
+
+        player.x = player.startx;
+        player.hitBox.x = player.startx;
+        player.y = player.starty;
+        player.hitBox.y = player.starty;
+    }
+
+    private void handleNextLevel(){
+        if (obstacles.size() == 0){
+            level++;
+
+            nextLevelCleaning();
+
+            try {
+                createAllGameObjects();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void handleGameOver(){
+        if (player.health < 1) {
+            showGameOverMessage();
+            level = 0;
+
+            nextLevelCleaning();
+            try {
+                createAllGameObjects();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 
 
+
+    //Handling painting
+    public void paint(Graphics g){
+
+        super.paint(g);
+        Graphics2D gtd =(Graphics2D) g;
+
+        //drawing all visible objects
+        player.draw(gtd);
+        for (Wall wall : walls) wall.draw(gtd);
+        for (Obstacle obstacle : obstacles) obstacle.draw(gtd);
+        for (Missile missile : playerMissiles) missile.draw(gtd);
+        for (Missile missile : obstacleMissiles) missile.draw(gtd);
+
+        //if (player.health < 1) showGameOverMessage();
+
+
+        //drawing all the other neccessary objects
+        gtd.drawString("Health:" + player.health,80,30);
+    }
+
+
+    //Handling KeyEvent Actions
     public void keyPressed(KeyEvent e) {
-        if( e.getKeyChar() == 'a') player.keyLeft = true;
+        if( e.getKeyChar() == 'a') {
+            player.keyLeft = true;
+            player.way = -1;
+        }
         if( e.getKeyChar() == 'w') player.keyUp = true;
         if( e.getKeyChar() == 's') player.keyDown = true;
-        if( e.getKeyChar() == 'd') player.keyRight = true;
+        if( e.getKeyChar() == 'd') {
+            player.keyRight = true;
+            player.way = 1;
+        }
+        if( e.getKeyChar() == ' ') {
+            playerMissiles.add(new PlayerMissile(player.x+player.width/2,
+                    player.y + 20, 20, 5, this));
+        }
     }
 
     public void keyReleased(KeyEvent e) {

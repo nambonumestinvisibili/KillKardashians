@@ -1,22 +1,15 @@
 package com.company;
 
 import java.awt.*;
+import java.util.ArrayList;
 
-public class Player {
+public class Player extends Sprites{
 
     int startx = 400;
     int starty = 500;
 
-    GamePanel panel;
-    int x;
-    int y;
-    int width = 50;
-    int height = 50;
-
     double xspeed;
     double yspeed;
-
-    Rectangle hitBox;
 
     boolean keyLeft;
     boolean keyRight;
@@ -25,12 +18,15 @@ public class Player {
 
     int health;
 
+    int way = 1;
+
     public Player(int x, int y, GamePanel panel){
 
         this.panel = panel;
         this.x = x;
         this.y = y;
-
+        width = 50;
+        height = 50;
         hitBox = new Rectangle(x,y, width, height);
 
         health = 3;
@@ -43,8 +39,6 @@ public class Player {
         maintainPlatformCollision();
 
         isHit();
-
-
 
         x += xspeed;
         y += yspeed;
@@ -109,8 +103,10 @@ public class Player {
     }
 
     private void isHit(){
-        //checking getting hit
-        for (Obstacles obstacle : panel.obstacles){
+        ArrayList<Integer> obstacleMissilesToRemove = new ArrayList<>();
+
+        //checking getting hit by an obstacle
+        for (Obstacle obstacle : panel.obstacles){
             if (hitBox.intersects(obstacle.hitBox)){
                 health--;
 
@@ -118,11 +114,24 @@ public class Player {
                 hitBox.y = starty;
                 x = startx;
                 y = starty;
+            }
+        }
 
+        //checking getting hit by a missile
+        for (Missile missile : panel.obstacleMissiles){
+            if (hitBox.intersects(missile.hitBox)){
+                health--;
 
+                hitBox.x = startx;
+                hitBox.y = starty;
+                x = startx;
+                y = starty;
+
+                obstacleMissilesToRemove.add(panel.obstacleMissiles.indexOf(missile));
 
             }
         }
+        for (int every : obstacleMissilesToRemove) panel.obstacleMissiles.remove(every);
     }
 
 
