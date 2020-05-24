@@ -87,7 +87,7 @@ public class GamePanel extends JPanel implements ActionListener {
                 }
 
                 if (leveldata.get(i).get(j) == 2){
-                    obstacles.add(new Obstacle(j*50, i*50, 50, 50, this));
+                    obstacles.add(new ObstacleHigh(j*50, i*50, 50, 50, this));
                 }
 
             }
@@ -109,7 +109,12 @@ public class GamePanel extends JPanel implements ActionListener {
 
             for (Obstacle obstacle : obstacles){
                 if (missile.hitBox.intersects(obstacle.hitBox)){
-                    obstaclesToRemove.add(obstacles.indexOf(obstacle));
+                    obstacle.health--;
+                    System.out.println(obstacle.health);
+
+                    if (obstacle.health == 0) {
+                        obstaclesToRemove.add(obstacles.indexOf(obstacle));
+                    }
                     missilesToRemove.add(playerMissiles.indexOf(missile));
 
                 }

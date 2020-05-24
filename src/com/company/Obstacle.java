@@ -2,12 +2,18 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Obstacle extends Sprites {
 
+    ArrayList<ImageIcon> pictures = new ArrayList<>();
+    int randomNumber;
+
     ImageIcon img = new ImageIcon("resources\\obstacleImages\\kim.jpg");
     Image kimimg = img.getImage();
+
     double xspeed = 1;
+    int health;
 
     public Obstacle(int x, int y, int width, int height, GamePanel panel){
         this.x = x;
@@ -40,8 +46,5 @@ public class Obstacle extends Sprites {
         }
         hitBox.y -= 3;
     }
-
-
-
 
 }
