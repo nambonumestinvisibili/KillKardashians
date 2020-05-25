@@ -29,7 +29,7 @@ public class Player extends Sprites{
         height = 50;
         hitBox = new Rectangle(x,y, width, height);
 
-        health = 3;
+        health = 4;
 
     }
 

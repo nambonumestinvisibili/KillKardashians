@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f462d0fe-d401-4b8b-8b4c-fabe99211313" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/level-makers/levelTemplate.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/level-makers/levelTemplateNoFormat.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ObstacleHigh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ObstacleLow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ObstacleMedium.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/GameStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KillKardashians.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/GamePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/GamePanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/Obstacle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/Obstacle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/levelTemplate.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lvlTempNoFormat.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Obstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +123,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="958" y="125" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590249529090" />
+    <state x="566" y="297" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590431768450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="566" y="297" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1590431768450" />
     <state x="449" y="72" key="#com.intellij.unscramble.UnscrambleDialog" timestamp="1590267070303">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -139,22 +139,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="380" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589926674845" />
-    <state width="745" height="160" key="GridCell.Tab.0.bottom" timestamp="1590336384272">
+    <state width="745" height="160" key="GridCell.Tab.0.bottom" timestamp="1590438056173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590336384272" />
-    <state width="745" height="160" key="GridCell.Tab.0.center" timestamp="1590336384271">
+    <state width="745" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590438056173" />
+    <state width="745" height="160" key="GridCell.Tab.0.center" timestamp="1590438056173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590336384271" />
-    <state width="745" height="160" key="GridCell.Tab.0.left" timestamp="1590336384271">
+    <state width="745" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590438056173" />
+    <state width="745" height="160" key="GridCell.Tab.0.left" timestamp="1590438056172">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590336384271" />
-    <state width="745" height="160" key="GridCell.Tab.0.right" timestamp="1590336384271">
+    <state width="745" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590438056172" />
+    <state width="745" height="160" key="GridCell.Tab.0.right" timestamp="1590438056173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590336384271" />
+    <state width="745" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590438056173" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1590147234665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -175,14 +175,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="344" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590270236301" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590331702252">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590437474375">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590331702252" />
-    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589997094311">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590437474375" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590350053365">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589997094311" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1590350053365" />
     <state x="0" y="0" width="826" height="734" key="net.trustx.simpleuml.components.BirdViewFrame" timestamp="1590268078477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -191,6 +191,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1590331724688" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1590437595307">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1590437595307" />
     <state x="431" y="145" key="search.everywhere.popup" timestamp="1590113745000">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

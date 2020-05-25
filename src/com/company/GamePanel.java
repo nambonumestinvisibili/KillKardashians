@@ -1,5 +1,7 @@
 package com.company;
 
+import jdk.nashorn.internal.scripts.JO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,6 +29,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
 
     int frameX = 1200;
+
 
 
 
@@ -61,11 +64,14 @@ public class GamePanel extends JPanel implements ActionListener {
                 if ((timeCounter % 30 == 0))
                     shootObstacleMissiles();
 
+
+                //checking if game should finish
+                handleWin();
+                handleGameOver();
+
                 //getting to next level
                 handleNextLevel();
 
-                //checking if game should finish
-                handleGameOver();
 
                 repaint();
             }
@@ -82,11 +88,17 @@ public class GamePanel extends JPanel implements ActionListener {
 
         for (int i = 0; i < row; i++){
             for (int j = 0; j < col; j++){
-                if (leveldata.get(i).get(j) == 1){
-                walls.add(new Wall(j*50, i*50, 50, 50));
-                }
 
+                if (leveldata.get(i).get(j) == 1){
+                    walls.add(new Wall(j*50, i*50, 50, 50));
+                }
                 if (leveldata.get(i).get(j) == 2){
+                    obstacles.add(new ObstacleLow(j*50, i*50, 50, 50, this));
+                }
+                if (leveldata.get(i).get(j) == 4){
+                    obstacles.add(new ObstacleMedium(j*50, i*50, 50, 50, this));
+                }
+                if (leveldata.get(i).get(j) == 5){
                     obstacles.add(new ObstacleHigh(j*50, i*50, 50, 50, this));
                 }
 
@@ -137,10 +149,28 @@ public class GamePanel extends JPanel implements ActionListener {
     //Handling game logistics
     private void showGameOverMessage(){
 
-        //gtd.setFont(new Font("TimesRoman", Font.PLAIN, 800));
-        //gtd.drawString("GAME OVER:" ,80,30);
-        JOptionPane.showMessageDialog(this ,"GameOver");
-        player.health = 3;
+        Object[] options = {"Yes, please",
+                "No, close the game."};
+
+        int n = JOptionPane.showOptionDialog(this,
+                "You've lost to the Kardashians. " +
+                "Would you like to play again?",
+                "What is it like to lose to the Kardashians...?",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[1]);
+
+        if (n == JOptionPane.YES_OPTION){
+            player.health = 3;
+        }
+        else{
+            for (Frame f : Frame.getFrames()){
+                f.dispose();
+                System.exit(0);
+            }
+        }
 
 
 
@@ -182,6 +212,37 @@ public class GamePanel extends JPanel implements ActionListener {
                 createAllGameObjects();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+            }
+        }
+    }
+
+    private void handleWin(){
+        if (ParseLevel.levelPaths.size() == level+1 &&
+                            obstacles.size() == 0){
+            System.out.println("siemano");
+            Object[] options = {"Yes, please",
+                    "No, close the game."};
+
+            int n = JOptionPane.showOptionDialog(this,
+                    "You've won to the Kardashians. " +
+                            "Would you like to play again?",
+                    "Wow... I'm amazed",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[1]);
+
+            if (n == JOptionPane.YES_OPTION){
+                level = -1;
+                handleNextLevel();
+                player.health = 3;
+            }
+            else{
+                for (Frame f : Frame.getFrames()){
+                    f.dispose();
+                    System.exit(0);
+                }
             }
         }
     }
