@@ -285,7 +285,7 @@ public class GamePanel extends JPanel implements ActionListener {
         }
         if( e.getKeyChar() == ' ') {
             playerMissiles.add(new PlayerMissile(player.x+player.width/2,
-                    player.y + 20, 20, 5, this));
+                    player.y + 20, 20, 20, this));
         }
     }
 

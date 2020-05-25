@@ -1,9 +1,13 @@
 package com.company;
 
+import com.sun.prism.paint.Color;
+
+import javax.swing.*;
 import java.awt.*;
 
 public class Missile extends Sprites {
 
+    java.awt.Color color;
     double xspeed = 3;
     int side;
 
@@ -20,7 +24,7 @@ public class Missile extends Sprites {
 
     @Override
     public void draw(Graphics2D gtd) {
-        gtd.setColor(Color.GREEN);
+        gtd.setColor(color);
         gtd.fillRect(x,y,width,height);
 
     }

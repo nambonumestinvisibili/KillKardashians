@@ -11,8 +11,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
 
-
-	    MainFrame frame = new MainFrame();
+        GameStarter frame = new GameStarter();
 
 	    //setting location at the screen
 	    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

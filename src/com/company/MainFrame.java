@@ -18,8 +18,11 @@ public class MainFrame extends JFrame {
         setTitle("Kill Kardashians");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(null);
-        setPanel();
         setVisible(true);
+
+
+
+        setPanel();
 
 
 

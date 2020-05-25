@@ -6,11 +6,8 @@ import java.util.ArrayList;
 
 public class Obstacle extends Sprites {
 
-    ArrayList<ImageIcon> pictures = new ArrayList<>();
-    int randomNumber;
+    ImageIcon img ;
 
-    ImageIcon img = new ImageIcon("resources\\obstacleImages\\kim.jpg");
-    Image kimimg = img.getImage();
 
     double xspeed = 1;
     int health;
@@ -26,8 +23,10 @@ public class Obstacle extends Sprites {
 
     public void draw(Graphics2D gtd){
         gtd.setColor(Color.red);
-        gtd.fillRect(x, y, width, height);
-        gtd.drawImage(kimimg, x, y, null);
+        //gtd.fillRect(x, y, width, height);
+
+        Image imageObstacle = img.getImage();
+        gtd.drawImage(imageObstacle, x, y, null);
 
     }
 

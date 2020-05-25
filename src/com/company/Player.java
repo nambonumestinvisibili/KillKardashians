@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Player extends Sprites{
 
-    int startx = 400;
-    int starty = 500;
+    int startx = 350;
+    int starty = 600;
 
     double xspeed;
     double yspeed;
