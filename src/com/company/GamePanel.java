@@ -17,8 +17,6 @@ public class GamePanel extends JPanel implements ActionListener {
     Timer gameTimer;
     int timeCounter = 0;
 
-    int level = 0;
-
     //Visible Objects
     Player player;
 
@@ -27,17 +25,14 @@ public class GamePanel extends JPanel implements ActionListener {
     ArrayList<PlayerMissile> playerMissiles = new ArrayList<>();
     ArrayList<ObstacleMissile> obstacleMissiles = new ArrayList<>();
 
-
     int frameX = 1200;
-
-
 
 
     public GamePanel() throws FileNotFoundException {
 
         //adding all visible objects
         player = new Player(400, 300, this);
-        createAllGameObjects();
+        ParseLevel.createAllGameObjects(this);
 
         //setting GameTimer
         gameTimer = new Timer();
@@ -80,32 +75,6 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
 
-    private void createAllGameObjects() throws FileNotFoundException {
-
-        ArrayList<ArrayList<Integer>> leveldata = ParseLevel.parseLevel(level);
-        int row = leveldata.size();
-        int col = leveldata.get(0).size();
-
-        for (int i = 0; i < row; i++){
-            for (int j = 0; j < col; j++){
-
-                if (leveldata.get(i).get(j) == 1){
-                    walls.add(new Wall(j*50, i*50, 50, 50));
-                }
-                if (leveldata.get(i).get(j) == 2){
-                    obstacles.add(new ObstacleLow(j*50, i*50, 50, 50, this));
-                }
-                if (leveldata.get(i).get(j) == 4){
-                    obstacles.add(new ObstacleMedium(j*50, i*50, 50, 50, this));
-                }
-                if (leveldata.get(i).get(j) == 5){
-                    obstacles.add(new ObstacleHigh(j*50, i*50, 50, 50, this));
-                }
-
-            }
-        }
-
-    }
 
 
     //Handling missile things to handle
@@ -190,12 +159,12 @@ public class GamePanel extends JPanel implements ActionListener {
 
     private void handleNextLevel(){
         if (obstacles.size() == 0){
-            level++;
+            ParseLevel.level++;
 
             nextLevelCleaning();
 
             try {
-                createAllGameObjects();
+                ParseLevel.createAllGameObjects(this);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -205,11 +174,11 @@ public class GamePanel extends JPanel implements ActionListener {
     private void handleGameOver(){
         if (player.health < 1) {
             showGameOverMessage();
-            level = 0;
+            ParseLevel.level = 0;
 
             nextLevelCleaning();
             try {
-                createAllGameObjects();
+                ParseLevel.createAllGameObjects(this);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -217,7 +186,7 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     private void handleWin(){
-        if (ParseLevel.levelPaths.size() == level+1 &&
+        if (ParseLevel.levelPaths.size() == ParseLevel.level+1 &&
                             obstacles.size() == 0){
             System.out.println("siemano");
             Object[] options = {"Yes, please",
@@ -234,7 +203,7 @@ public class GamePanel extends JPanel implements ActionListener {
                     options[1]);
 
             if (n == JOptionPane.YES_OPTION){
-                level = -1;
+                ParseLevel.level = -1;
                 handleNextLevel();
                 player.health = 3;
             }

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KillKardashians:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/KillKardashians_jar</output-path>
+    <root id="archive" name="KillKardashians.jar">
+      <element id="module-output" name="KillKardashians" />
+    </root>
+  </artifact>
+</component>

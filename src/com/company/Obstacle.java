@@ -7,8 +7,6 @@ import java.util.ArrayList;
 public class Obstacle extends Sprites {
 
     ImageIcon img ;
-
-
     double xspeed = 1;
     int health;
 

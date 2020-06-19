@@ -20,15 +20,7 @@ public class MainFrame extends JFrame {
         setLayout(null);
         setVisible(true);
 
-
-
         setPanel();
-
-
-
-
-
-
 
     }
 

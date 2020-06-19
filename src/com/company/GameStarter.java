@@ -35,9 +35,11 @@ public class GameStarter extends JFrame {
        instructions = new JTextPane();
        instructions.setBounds((this.getWidth()-600)/2, 100, 600, 380);
 
+       //formatting instructions
        SimpleAttributeSet attributeSet = new SimpleAttributeSet();
        StyleConstants.setBold(attributeSet, true);
        StyleConstants.setFontSize(attributeSet, 18);
+
        instructions.setCharacterAttributes(attributeSet, true);
        instructions.setText(invits);
 
@@ -49,9 +51,11 @@ public class GameStarter extends JFrame {
            public void actionPerformed(ActionEvent actionEvent) {
                try {
                    MainFrame frame = new MainFrame();
+
                    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
                    frame.setLocation((int)(screenSize.getWidth()/2 - frame.getSize().getWidth()/2),
                            (int)(screenSize.getHeight()/2 - frame.getSize().getHeight()/2));
+
                    dispose();
                } catch (FileNotFoundException e) {
                    e.printStackTrace();
