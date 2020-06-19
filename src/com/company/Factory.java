@@ -5,13 +5,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ParseLevel {
-
-    public static int level = 0;
-    //public int level = 0;
+public class Factory {
 
     static ArrayList<String> levelPaths = new ArrayList<>();
+    public static int level = 0;
 
+    //obtaining data from resource/files
     public static void getLevels(){
         File folder = new File("resources\\levels\\");
         File[] listOfFiles = folder.listFiles();
@@ -22,6 +21,8 @@ public class ParseLevel {
         }
     }
 
+
+    //parsing text to list of lists
     public static ArrayList<ArrayList<Integer>> parseLevel(int level) throws FileNotFoundException {
 
         File leveldata =  new File(levelPaths.get(level));
@@ -42,9 +43,10 @@ public class ParseLevel {
         return splitList;
     }
 
+    //creating all objects from data
     public static void createAllGameObjects(GamePanel panel) throws FileNotFoundException {
 
-        ArrayList<ArrayList<Integer>> leveldata = ParseLevel.parseLevel(level);
+        ArrayList<ArrayList<Integer>> leveldata = Factory.parseLevel(level);
         int row = leveldata.size();
         int col = leveldata.get(0).size();
 
@@ -67,6 +69,35 @@ public class ParseLevel {
             }
         }
 
+    }
+
+
+    //deleting from panel all there is
+    public static void nextLevelCleaning(GamePanel panel){
+        panel.walls.clear();
+        panel.playerMissiles.clear();
+        panel.obstacleMissiles.clear();
+        panel.obstacles.clear();
+
+        Player player = panel.player;
+        player.x = player.startx;
+        player.hitBox.x = player.startx;
+        player.y = player.starty;
+        player.hitBox.y = player.starty;
+    }
+    //moving to next level
+    public static void handleNextLevel(GamePanel panel){
+        if (panel.obstacles.size() == 0){
+            Factory.level++;
+
+            nextLevelCleaning(panel);
+
+            try {
+                Factory.createAllGameObjects(panel);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

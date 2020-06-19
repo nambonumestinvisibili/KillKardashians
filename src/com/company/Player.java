@@ -14,7 +14,6 @@ public class Player extends Sprites{
     boolean keyLeft;
     boolean keyRight;
     boolean keyUp;
-    boolean keyDown;
 
     int health;
 
@@ -38,7 +37,7 @@ public class Player extends Sprites{
         maintainSpeed();
         maintainPlatformCollision();
 
-        isHit();
+        afterHit();
 
         x += xspeed;
         y += yspeed;
@@ -68,7 +67,6 @@ public class Player extends Sprites{
                 if (wall.hitBox.intersects(this.hitBox)) yspeed = -10;
             }
             hitBox.y--;
-            //yspeed = -6;
         }
         yspeed += 0.3;
 
@@ -102,7 +100,7 @@ public class Player extends Sprites{
         }
     }
 
-    private void isHit(){
+    private void afterHit(){
         ArrayList<Integer> obstacleMissilesToRemove = new ArrayList<>();
 
         //checking getting hit by an obstacle
@@ -138,7 +136,6 @@ public class Player extends Sprites{
     public void draw(Graphics2D gtd) {
         gtd.setColor(Color.black);
         gtd.fillRect(x,y,width,height);
-
         gtd.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 
 

@@ -21,7 +21,6 @@ public class Obstacle extends Sprites {
 
     public void draw(Graphics2D gtd){
         gtd.setColor(Color.red);
-        //gtd.fillRect(x, y, width, height);
 
         Image imageObstacle = img.getImage();
         gtd.drawImage(imageObstacle, x, y, null);

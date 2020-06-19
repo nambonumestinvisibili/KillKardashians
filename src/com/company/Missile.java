@@ -31,7 +31,7 @@ public class Missile extends Sprites {
 
     @Override
     public void set() {
-        x+= side *xspeed;
+        x += side*xspeed;
         hitBox.x += side *xspeed;
 
     }

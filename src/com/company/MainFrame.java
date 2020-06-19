@@ -2,8 +2,6 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 
 
@@ -12,7 +10,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() throws FileNotFoundException {
 
-        ParseLevel.getLevels();
+        Factory.getLevels();
 
         setSize(1200,800);
         setTitle("Kill Kardashians");
