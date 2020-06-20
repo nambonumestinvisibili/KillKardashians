@@ -7,8 +7,9 @@ public class ObstacleHigh extends Obstacle {
 
     public ObstacleHigh(int x, int y, int width, int height, GamePanel panel) {
         super(x, y, width, height, panel);
+        idx = 2;
         health = 3;
-        img = new ImageIcon("resources\\obstacleImages\\kim.jpg");
+        //img = new ImageIcon("resources\\obstacleImages\\kim.jpg");
         xspeed = 2;
 
     }

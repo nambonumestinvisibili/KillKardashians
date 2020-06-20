@@ -4,11 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Obstacle extends Sprites {
+public abstract class Obstacle extends Sprites {
 
     ImageIcon img ;
     double xspeed = 1;
     int health;
+    int idx;
 
     public Obstacle(int x, int y, int width, int height, GamePanel panel){
         this.x = x;
@@ -22,7 +23,7 @@ public class Obstacle extends Sprites {
     public void draw(Graphics2D gtd){
         gtd.setColor(Color.red);
 
-        Image imageObstacle = img.getImage();
+        Image imageObstacle = Bank.images.get(idx).getImage();
         gtd.drawImage(imageObstacle, x, y, null);
 
     }

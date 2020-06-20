@@ -11,6 +11,7 @@ public class MainFrame extends JFrame {
     public MainFrame() throws FileNotFoundException {
 
         Factory.getLevels();
+        Bank.getImages();
 
         setSize(1200,800);
         setTitle("Kill Kardashians");

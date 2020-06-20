@@ -5,7 +5,7 @@ import com.sun.prism.paint.Color;
 import javax.swing.*;
 import java.awt.*;
 
-public class Missile extends Sprites {
+public abstract class Missile extends Sprites {
 
     java.awt.Color color;
     double xspeed = 3;
