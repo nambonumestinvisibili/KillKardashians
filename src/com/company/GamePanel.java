@@ -94,7 +94,7 @@ public class GamePanel extends JPanel {
             for (Obstacle obstacle : obstacles){
                 if (missile.hitBox.intersects(obstacle.hitBox)){
                     obstacle.health--;
-                    System.out.println(obstacle.health);
+                    
 
                     if (obstacle.health == 0) {
                         obstaclesToRemove.add(obstacles.indexOf(obstacle));
