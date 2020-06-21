@@ -11,4 +11,4 @@ java -jar KillKardashians.jar
 ```
 Beware KillKardashians.jar needs to be in the exact same folder as resources.
 
-## Project has been created by Dawid Holewa as a result of OOP course assignment at II UWr
+#### Project has been created by Dawid Holewa as a result of OOP course assignment at II UWr
