@@ -1,11 +1,14 @@
 # KillKardashians
 
 Basic platformer game.
+Feel free to play around!
 
 ## Installation
-On Windows:
+These instructions will help you get a free copy:
+
+Windows:
 ```powershell
-git clone https://github.com/nambonumestinvisibili/KillKardashiansExecutable
+git clone https://github.com/nambonumestinvisibili/KillKardashians
 cd [YOUR_DOWNLOADS_FOLDER]\KillKardashians-master\out\artifacts\KillKardashians_jar
 java -jar KillKardashians.jar
 ```
