@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="KillKardashians:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f462d0fe-d401-4b8b-8b4c-fabe99211313" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/Missile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/Obstacle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/Obstacle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/ObstacleHigh.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/ObstacleHigh.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/ObstacleLow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/ObstacleLow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KillKardashians/com/company/ObstacleMedium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KillKardashians/com/company/ObstacleMedium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Missile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Obstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ObstacleHigh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ObstacleHigh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ObstacleLow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ObstacleLow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ObstacleMedium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ObstacleMedium.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +49,13 @@
     <property name="DefaultPlantUmlFileTemplate" value="UML Sequence" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/KillKardashians_jar/KillKardashians.jar" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JAR Application.KillKardashiansJar">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="KillKardashians" />
@@ -73,6 +66,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KillKardashiansJar" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/KillKardashians_jar/KillKardashians.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\dawid\OneDrive\Pulpit\KillKardashians" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="KillKardashians:jar" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JAR Application.KillKardashiansJar" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -121,18 +128,26 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="703" y="177" key="#BuildArtifactsBeforeRunChooser" timestamp="1592617740783">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="703" y="177" key="#BuildArtifactsBeforeRunChooser/0.0.1536.824@0.0.1536.824" timestamp="1592617740783" />
     <state x="361" y="71" key="#Notifications" timestamp="1590268683486">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1590268683486" />
+    <state x="378" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592617787854">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="378" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1592617787854" />
     <state x="958" y="125" key="#com.intellij.ide.util.MemberChooser" timestamp="1590249529090">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="958" y="125" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590249529090" />
-    <state x="160" y="204" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590444853247">
+    <state x="623" y="163" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592617387024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="160" y="204" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1590444853247" />
+    <state x="623" y="163" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1592617387024" />
     <state x="566" y="297" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590431768450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -145,26 +160,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="402" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590270781876" />
-    <state x="380" y="154" key="FileChooserDialogImpl" timestamp="1589926674845">
+    <state x="380" y="154" key="FileChooserDialogImpl" timestamp="1592617708107">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="380" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589926674845" />
-    <state width="1492" height="157" key="GridCell.Tab.0.bottom" timestamp="1592611903342">
+    <state x="380" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592617708107" />
+    <state width="1492" height="156" key="GridCell.Tab.0.bottom" timestamp="1592671152510">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="157" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592611903342" />
-    <state width="1492" height="157" key="GridCell.Tab.0.center" timestamp="1592611903342">
+    <state width="1492" height="156" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592671152509" />
+    <state width="1492" height="156" key="GridCell.Tab.0.center" timestamp="1592671152509">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="157" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592611903342" />
-    <state width="1492" height="157" key="GridCell.Tab.0.left" timestamp="1592611903342">
+    <state width="1492" height="156" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592671152509" />
+    <state width="1492" height="156" key="GridCell.Tab.0.left" timestamp="1592671152509">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="157" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592611903342" />
-    <state width="1492" height="157" key="GridCell.Tab.0.right" timestamp="1592611903342">
+    <state width="1492" height="156" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592671152509" />
+    <state width="1492" height="156" key="GridCell.Tab.0.right" timestamp="1592671152509">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="157" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592611903342" />
+    <state width="1492" height="156" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592671152509" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1590147234665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -181,14 +196,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1590147234665" />
-    <state x="28" y="0" width="803" height="824" key="SettingsEditor" timestamp="1590444891678">
+    <state x="577" y="0" width="803" height="824" key="SettingsEditor" timestamp="1592617422639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="28" y="0" width="803" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590444891678" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1592577306637">
+    <state x="577" y="0" width="803" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592617422639" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1592752524153">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592577306637" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592752524153" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590350053365">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -205,10 +220,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1590437595307" />
-    <state x="431" y="145" key="search.everywhere.popup" timestamp="1590113745000">
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1592617658992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590113745000" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1592617658992" />
   </component>
   <component name="simpleUML.DiagramSettingsWorkspace">
     <option name="SaveAsImageDialog.path" value="C:\Users\dawid\OneDrive\Pulpit\kunhhbn.bmp" />

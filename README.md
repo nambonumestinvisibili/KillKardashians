@@ -1,4 +1,12 @@
 # KillKardashians
 
-Basic platformer game in the process of developing.
-Project has been created because of OOP course at II Uwr
+Basic platformer game.
+
+
+
+
+
+
+
+
+Project has been created from scratch by Dawid Holewa as a result of OOP course at II UWr
