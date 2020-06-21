@@ -4,7 +4,7 @@ Basic platformer game.
 Feel free to play around!
 
 ## Installation
-These instructions will help you get a free copy:
+These instructions will help you get it up and running:
 
 Windows:
 ```powershell
