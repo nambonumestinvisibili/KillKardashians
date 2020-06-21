@@ -3,7 +3,7 @@
 Basic platformer game.
 
 ## Installation
-
+On Windows:
 ```powershell
 git clone https://github.com/nambonumestinvisibili/KillKardashiansExecutable
 cd [YOUR_DOWNLOADS_FOLDER]\KillKardashians-master\out\artifacts\KillKardashians_jar
